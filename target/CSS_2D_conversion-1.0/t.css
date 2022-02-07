@@ -1,0 +1,61 @@
+/*
+  Project name(项目名称)：CSS_2D_conversion 
+  File name(文件名): t
+  Author(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/2/7 
+  Time(创建时间)： 13:21
+  Version(版本): 1.0
+  Description(描述)：
+  借助 CSS 中的 transform 属性以及下列转换函数就可以实现 2D 转换：
+matrix()：以一个包含六个值（a, b, c, d, e, f）的变换矩阵的形式指定一个 2D 变换，相当于直接应用一个 [a,b,c,d,e,f] 的变换矩阵；
+translate()：将对象沿 X 轴和 Y 轴平移，该函数需要提供 1~2 个参数，第一个参数对应 X 轴，第二个参数对应 Y 轴，如果未提供第二个参数，则默认值为 0；
+translatex()：将对象沿 X 轴（水平方向）的平移；
+translatey()：将对象沿 Y 轴（垂直方向）的平移；
+rotate()：旋转指定对象，在函数的参数中可以指定旋转的角度；
+scale()：将对象进行缩放，该函数需要提供 1~2 个参数，第一个参数对应 X 轴，第二个参数对应 Y 轴，如果未提供第二个参数，则默认取第一个参数的值；
+scalex()：将对象进行缩放（改变元素的宽度）；
+scaley()：将对象进行缩放（改变元素的高度）；
+skew()：将对象沿 X 轴和 Y 轴方向进行倾斜扭曲，该函数需要提供 1~2 个参数，第一个参数对应 X 轴，第二个参数对应 Y 轴。如果未提供第二个参数，则默认值为 0；
+skewx()：将对象沿 X 轴的（水平方向）扭曲；
+skewy()：将对象沿 Y 轴的（垂直方向）扭曲。
+
+1. translate()
+translate() 函数用来根据指定的参数将元素沿水平（X轴）或垂直（Y轴）方向移动，函数的语法格式如下：
+translate(tx, ty)
+其中 tx 对应元素在水平（X轴）方向的移动距离，ty 对应元素在垂直（Y轴）方向的移动距离，参数 ty 可以忽略（默认为 0），两个参数均可以为负值。
+
+2. rotate()
+rotate() 函数用来按照给定的角度来旋转元素，函数的语法格式如下：
+rotate(a)
+其中参数 a 表示元素要旋转的角度，若 a 为正值则表示顺时针旋转，若 a 为负值则表示逆时针旋转。
+
+3. scale()
+scale() 函数用来缩放（放大或缩小）指定的元素，函数的语法格式如下：
+scale(sx, sy)
+其中 sx 表示水平方向的缩放比例，sy 表示垂直方向的缩放比例。另外，参数 sy 可以省略，它的默认值等于 sx。
+
+4. skew()
+skew() 函数用来将元素沿水平方向（X轴）和垂直方向（Y轴）倾斜扭曲，函数的语法格式如下：
+skew(ax, ay)
+其中，参数 ax 表示元素水平方向的扭曲角度，参数 ay 表示元素垂直方向的扭曲角度。另外，参数 ay 可以省略，若省略参数 ay，则其默认值为 0。
+
+5. matrix()
+matrix() 函数可以看作是 skew()、scale()、rotate() 和 translate() 几个函数的缩写形式，通过 matrix() 函数可以同时定义所有 2D转换操作，函数的语法格式如下：
+matrix(a, b, c, d, tx, ty)
+matrix() 函数中的 6 个参数分别对应 scaleX()、skewY()、skewX()、scaleY()、translateX()、translateY() 几个函数，您可以使用 matrix() 来实现各种 2D转换操作，例如：
+translate(tx, ty) = matrix(1, 0, 0, 1, tx, ty);：其中 tx 和 ty 是水平和垂直平移值；
+rotate(a) = matrix(cos(a), sin(a), -sin(a), cos(a), 0, 0);：其中，a 是度数的值。您可以交换 sin(a) 和 -sin(a) 值来进行反向旋转；
+scale(sx, sy) = matrix(sx, 0, 0, sy, 0 ,0);：其中 sx 和 sy 是水平和垂直缩放比例值；
+skew(ax, ay) = matrix(1, tan(ay), tan(ay), 1, 0 ,0);：其中 ax 和 ay 是以 deg 为单位的水平和垂直值。
+
+ */
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #CCC;
+    transform: translate(100px, 10px);
+}
+    
